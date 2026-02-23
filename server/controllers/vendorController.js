@@ -1,4 +1,11 @@
-const { getVendorProducts, createProduct, updateProduct, deleteProduct } = require('../services/vendorService');
+const {
+    getVendorProducts,
+    createProduct,
+    updateProduct,
+    deleteProduct,
+    getVendorOrders,
+    updateOrderStatus
+} = require('../services/vendorService');
 
 const getProducts = async (req, res) => {
     const products = await getVendorProducts(req.user._id);
@@ -23,4 +30,25 @@ const removeProduct = async (req, res) => {
     res.json(result);
 };
 
-module.exports = { getProducts, addProduct, editProduct, removeProduct };
+const getOrders = async (req, res) => {
+    const orders = await getVendorOrders(req.user._id);
+    res.json(orders);
+};
+
+const approveOrder = async (req, res) => {
+    try {
+        const order = await updateOrderStatus(req.params.id, 'processing', req.user._id);
+        res.json(order);
+    } catch (error) {
+        res.status(400).json({ message: error.message });
+    }
+};
+
+module.exports = {
+    getProducts,
+    addProduct,
+    editProduct,
+    removeProduct,
+    getOrders,
+    approveOrder
+};

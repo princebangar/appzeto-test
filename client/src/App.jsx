@@ -15,6 +15,7 @@ import MyOrders from './pages/MyOrders';
 import VendorProducts from './pages/vendor/VendorProducts';
 import AddProduct from './pages/vendor/AddProduct';
 import EditProduct from './pages/vendor/EditProduct';
+import VendorOrders from './pages/vendor/VendorOrders';
 
 import VendorApproval from './pages/admin/VendorApproval';
 import RevenueDashboard from './pages/admin/RevenueDashboard';
@@ -49,6 +50,9 @@ function App() {
             } />
             <Route path="/vendor/products/edit/:id" element={
               <ProtectedRoute roles={['vendor']}><EditProduct /></ProtectedRoute>
+            } />
+            <Route path="/vendor/orders" element={
+              <ProtectedRoute roles={['vendor']}><VendorOrders /></ProtectedRoute>
             } />
 
             <Route path="/admin/vendors" element={

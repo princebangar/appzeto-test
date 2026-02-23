@@ -1,6 +1,6 @@
 # 🛍️ Multi-Vendor Marketplace Platform (MERN Stack)
 
-> **Hinglish mein likha gaya hai taaki developers easily samajh sakein** 😄
+> **Hinglish mein likha gaya hai taaki developers easily samajh sakein** 
 
 ---
 
@@ -21,7 +21,7 @@ Tech Stack: **MongoDB + Express.js + React (Vite) + Node.js = MERN**
 appzeto-test/
 ├── server/          ← Backend (Node.js + Express)
 ├── client/          ← Frontend (React + Vite)
-└── README.md        ← Ye wala file 👈
+└── README.md        
 ```
 
 ---

@@ -48,9 +48,14 @@ function Navbar() {
                     </>
                 )}
                 {user?.role === 'vendor' && (
-                    <Link to="/vendor/products" className="flex items-center gap-1 px-4 py-2 rounded-lg hover:bg-slate-700 text-sm transition">
-                        <FiGrid className="text-blue-400" /> Dashboard
-                    </Link>
+                    <>
+                        <Link to="/vendor/products" className="flex items-center gap-1 px-4 py-2 rounded-lg hover:bg-slate-700 text-sm transition">
+                            <FiGrid className="text-blue-400" /> Products
+                        </Link>
+                        <Link to="/vendor/orders" className="flex items-center gap-1 px-4 py-2 rounded-lg hover:bg-slate-700 text-sm transition">
+                            <FiPackage className="text-blue-400" /> Orders
+                        </Link>
+                    </>
                 )}
                 {user?.role === 'admin' && (
                     <>
